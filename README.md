@@ -16,7 +16,7 @@ void DataCallback(const void *pData, ma_uint32 frameCount)
 
 # Example:
 ```c
-void AudioInputCallback(const void *pData, ma_uint32 frameCount) {
+void DataCallback(const void *pData, ma_uint32 frameCount) {
 
         for (int i = 0; i < frameCount; i++) {
                 printf("%hd\n", *(short*)pData);
@@ -25,7 +25,7 @@ void AudioInputCallback(const void *pData, ma_uint32 frameCount) {
 }
 ```
 ```c
-if (!AudioInputMonitor__Monitor(ma_format_s16, 1, 48000, &AudioInputCallback)) {
+if (!AudioInputMonitor__Monitor(ma_format_s16, 1, 48000, &DataCallback)) {
         puts("ERROR: Failed to start monitoring audio input");
 }
 ```
